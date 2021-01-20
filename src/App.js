@@ -26,17 +26,16 @@ const App = (props) => {
 const mapStateToProps = (state) => {
   return {
     additionalPrice: state.additionalPrice,
-    car: state.car
+    car: state.car,
     // car: {
     //   price: state.price,
     //   name: state.name,
     //   image: state.image,
     //   features: state.features
-    // }
-    ,
-    additionalFeatures: state.additionalFeatures
-  }
-}
+    // },
+    additionalFeatures: state.additionalFeatures,
+  };
+};
 
 export default connect(mapStateToProps, {carReducer})(App);
 

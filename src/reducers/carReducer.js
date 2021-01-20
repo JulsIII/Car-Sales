@@ -23,14 +23,14 @@ export const carReducer = (state = initialState, action) => {
     case ADD_FEATURE:
       return {
         ...state,
-        members: state.members.map((member) => {
-          if (member.id === action.payload) {
+        additionalFeatures: state.additionalFeatures.map((feature) => {
+          if (feature.id === action.payload) {
             return {
-              ...member,
-              dragonStatus: !member.dragonStatus,
+              ...feature,
+              name: !feature.name,
             };
           } else {
-            return member;
+            return feature;
           }
         }),
       };
@@ -38,14 +38,14 @@ export const carReducer = (state = initialState, action) => {
       case REMOVE_FEATURE:
         return {
           ...state,
-          members: state.members.map((member) => {
-            if (member.id === action.payload) {
+          additionalFeatures: state.additionalFeatures.map((feature) => {
+            if (feature.id === action.payload) {
               return {
-                ...member,
-                dragonStatus: !member.dragonStatus,
+                ...feature,
+                name: !feature.name,
               };
             } else {
-              return member;
+              return feature;
             }
           }),
         };
