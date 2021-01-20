@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 
 const App = (props) => {
   
-  
   return (
     <div className="boxes">
       <div className="box">
