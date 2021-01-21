@@ -4,6 +4,7 @@ import { addFeature } from './../actions/carActions'
 
 const AdditionalFeature = props => {
   const {feature, addFeature} = props;
+  
   const handleClick = () => {
     addFeature(feature);
   };
