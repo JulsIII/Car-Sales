@@ -20,3 +20,19 @@ const AddedFeatures = props => {
 };
 
 export default AddedFeatures;
+
+
+
+// const mapStateToProps = (state) => {
+//   return {
+//     additionalPrice: state.additionalPrice,
+//     car: state.car,
+//     // car: {
+//     //   price: state.price,
+//     //   name: state.name,
+//     //   image: state.image,
+//     //   features: state.features
+//     // },
+//     additionalFeatures: state.additionalFeatures,
+//   };
+// };
