@@ -21,36 +21,31 @@ const initialState = {
 export const carReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FEATURE:
-      return {
+
+        if(!state.car.features.includes(action.payload)) {
+      return( {
         ...state,
-        additionalFeatures: state.additionalFeatures.map((feature) => {
-          if (feature.id === action.payload) {
-            return {
-              ...feature,
-              name: !feature.name,
-            };
-          } else {
-            return feature;
-          }
-        }),
-      };
+        additionalPrice: (state.additionalPrice + action.payload),
+        car: {
+            ...state.car,
+            features: [...state.car.features, action.payload]
+        }
+      });
+    } else {
+        return state;
+    }
+    case REMOVE_FEATURE:
+    const { id, price} = action.payload
+    return({
+        ...state,
+        additionalPrice: (state.additionalPrice - price),
+        car: {
+            ...state.car,
+            features: state.car.features.filter(feature => feature.id != id)
+        }
+    })
 
-      case REMOVE_FEATURE:
-        return {
-          ...state,
-          additionalFeatures: state.additionalFeatures.map((feature) => {
-            if (feature.id === action.payload) {
-              return {
-                ...feature,
-                name: !feature.name,
-              };
-            } else {
-              return feature;
-            }
-          }),
-        };
-
-    default:
-      return state;
+default:
+      return(state);
   }
 };
